@@ -1,0 +1,30 @@
+<div class="row">
+  <div
+    class="col-12"
+    *ngIf="mealsService.MealsList == null && mealsService.loading == false"
+  >
+    <div class="container-meals">
+      <h2 class="text-danger">No se encontraron datos</h2>
+    </div>
+  </div>
+
+  <div class="col-12" *ngIf="mealsService.loading == true">
+    <div class="container-meals-loading d-flex flex-column gap-2">
+      <span class="loader"></span>
+      <h2>Buscando...</h2>
+    </div>
+  </div>
+
+
+
+  <ng-container *ngIf="!mealsService.loading">
+    <app-saucer-card
+      *ngFor="let meal of meals"
+      [Meals]="meal"
+      class="col-md-3 col-sm-6"
+    ></app-saucer-card>
+  </ng-container>
+  
+
+
+</div>

@@ -1,0 +1,28 @@
+<!-- <p>home-page works!</p> -->
+
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <shared-sidebar></shared-sidebar>
+    <!-- Home Page -->
+    <div class="flex-fill" >
+        <div class="row p-3">
+            <div class="col-12">
+              <!-- Busqueda -->
+              <app-saucer-search-input></app-saucer-search-input>
+            </div>
+          
+            <div class="col-12 pt-2">
+              <!-- Listado de Gifs -->
+              <!-- card-list, .ts, .html -->
+              <!-- <gifs-card-list [gifs]="gifs" ></gifs-card-list>
+          
+           -->
+            <app-saucer-card-list [meals]="Meals"></app-saucer-card-list>
+
+            </div>
+          </div>
+    </div>
+
+  
+  </div>
+

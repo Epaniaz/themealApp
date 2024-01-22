@@ -1,0 +1,33 @@
+<!-- <p>saucer-search-input works!</p> -->
+
+<form class="row g-2" [formGroup]="formSearch">
+  <div class="col-auto">
+    <img src="../../../assets/logo.svg" alt="" />
+  </div>
+
+  <div class="col-auto mt-4">
+    <div class="d-flex flex-column ">
+      <mat-form-field class="example-full-width mt-2" appearance="outline">
+        <mat-label>Nombre del Platillo</mat-label>
+        <input
+          matInput
+          #text
+          placeholder="Busca por nombre"
+          formControlName="text"
+          appValidarInputNumber
+        />
+      </mat-form-field>
+  
+      <app-categories></app-categories>
+    </div>
+ 
+
+  </div>
+
+  
+  <div class="col-auto mt-4">
+    <button class="btn btn-primary mt-4" (click)="searchTag()" >Buscar</button>
+  </div>
+</form>
+
+

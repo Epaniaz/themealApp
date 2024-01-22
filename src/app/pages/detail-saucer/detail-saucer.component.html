@@ -1,0 +1,44 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ meal?.strMeal }}</mat-card-title>
+          <mat-card-subtitle
+            >{{ meal?.strCategory }} - {{ meal?.strArea }}</mat-card-subtitle
+          >
+        </mat-card-header>
+      
+        <mat-card-content>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-5">
+                    <img
+                      mat-card-image
+                      [src]="meal?.strMealThumb"
+                      alt="{{ meal?.strMeal }}"
+                    />
+                  </div>
+            
+                  <div class="col-md-6">
+                    <h3> <strong>Ingredients:</strong></h3>
+                    <ul>
+                      <li *ngFor="let ingredient of getIngredients(meal)">
+                        {{ ingredient }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
+      
+          <h3> <strong>Instructions:</strong></h3>
+      
+          <p>{{ meal?.strInstructions }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="warn" (click)="goBack()">Back</button>
+          <a mat-button [href]="meal?.strYoutube" target="_blank">Watch on YouTube</a>
+          <a mat-button [href]="meal?.strSource" target="_blank">Source</a>
+        </mat-card-actions>
+      </mat-card>
+
+</div>
+

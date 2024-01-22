@@ -1,0 +1,27 @@
+
+<div class="card mb-2 text-centert bg-dark text-center">
+
+    <shared-lazy-image
+      [url]="Meals.strMealThumb"
+      [alt]="Meals.strMeal || 'No name'"
+    ></shared-lazy-image>
+
+    <!-- <img
+      [src]="gif.images.downsized_medium.url"
+      [alt]="gif.title"
+      class="card-img-top"
+    > -->
+
+    <div class="card-body text-white d-flex gap-2 ">
+      <label class="card-text">
+        Meal: {{ Meals.strMeal || 'No title' }}
+      </label>
+
+      <label class="card-text">
+       Category: {{ Meals.strCategory || 'No title' }}
+      </label>
+
+      <button class="btn btn-info" [routerLink]="['/detail', Meals.idMeal ]"> Ver </button>
+    </div>
+
+  </div>
